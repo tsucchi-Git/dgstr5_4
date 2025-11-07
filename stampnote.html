@@ -254,7 +254,7 @@
                     //prompt_nickname();
                 //} else {
                     //入力フォームを非表示にする。
-                    document.getElementById("form_nickname").style.display='none';
+                    //document.getElementById("form_nickname").style.display='none';
                     //ローカルストレージからニックネームの読み込み
                     _nickname=localStorage.getItem(key_nickname);
                     //関数get_date_timeを呼び出し、年月日時分秒を読み込む
@@ -262,7 +262,7 @@
                     //ニックネーム、利用者番号、スタンプ一覧表、注釈を表示にする
                     document.getElementById("nickname").style.display='block';
                     // document.getElementById("number").style.display='block';
-                    document.getElementById("table_display").style.display='block';
+                    document.getElementById("table-display").style.display='block';
                     document.getElementById("appendix").style.display='block';
                     document.getElementById("nickname").textContent=_nickname + " さん >>> スタンプ：" + _count +' 個';
                     // document.getElementById("number").textContent='No.:'+ year + month + day +hour + minute + second;
@@ -305,6 +305,7 @@
   </script> 
 </body>
 </html>
+
 
 
 
