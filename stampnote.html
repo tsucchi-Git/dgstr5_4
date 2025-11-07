@@ -60,14 +60,14 @@
    </nav>
   <div id="title" class="page-title"></div>
   <p id="nickname" class="text-begin"></p>
-  <form id="form_nickname" class="form">  //ニックネーム入力のフォーム
+  <form id="form_nickname" class="form">
     <lable>スタンプ帳にニックネームが表示されます。<br>好きな名前を入力してください。<br><br></lable>
     <lable for "textform">ニックネーム：</lable>
     <input type="text" id="name">
     <button id="button">実行</button>
     <lable for "textform"><br>※３～１０文字で入力してください。<br>※ニックネームは途中で変更できません。</lable>
   </form>
-  <table border="1" id="table-display">
+  <table border="1" id="table_display">
     <tbody>
       <tr >
         <td>
@@ -274,7 +274,7 @@
                     //ニックネーム、利用者番号、スタンプ一覧表、注釈を表示にする
                     document.getElementById("nickname").style.display='block';
                     // document.getElementById("number").style.display='block';
-                    document.getElementById("table-display").style.display='block';
+                    document.getElementById("table_display").style.display='block';
                     document.getElementById("appendix").style.display='block';
                     document.getElementById("nickname").textContent=_nickname + " さん >>> スタンプ：" + _count +' 個';
                     // document.getElementById("number").textContent='No.:'+ year + month + day +hour + minute + second;
@@ -371,6 +371,7 @@
   </script> 
 </body>
 </html>
+
 
 
 
