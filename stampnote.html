@@ -34,7 +34,7 @@
     font-family:Arial;
   }
   .page-title{
-    margin-top:4%;
+    margin-top:8%;
     text-align: center; /* 横方向の中央揃え */
     font-size: 120%;
     font-family:Arial;
@@ -45,6 +45,10 @@
     color:blue;
     font-family:Arial;
   }
+  .text-begin{
+    text-align: left;
+    font-family:Arial;
+  }  
   .form{
     padding: 10px;
     border: 1px solid #333;
@@ -52,6 +56,14 @@
   }
   .p_nickname {
     text-decoration: underline;
+  }
+  .text-number{
+    font-size:20%;
+    text-align: raight;
+    color:black;
+    font-family:Arial;
+    margin-top:-3px;
+    margin-bottom:-3px;
   }
 </style>
 <body>
@@ -70,7 +82,7 @@
       <lable for "textform">ニックネーム：</lable>
       <input type="text" id="name">
       <button id="button">実行</button>
-      <lable for "textform"><br>※３～１２文字で入力してください。<br>ニックネームは途中で変更できません。</lable>
+      <lable for "textform"><br>※３～１０文字で入力してください。<br>ニックネームは途中で変更できません。</lable>
   </form>
   <table border="1" id="table-disp">
     <tbody>
@@ -194,13 +206,16 @@
     var area_no;
     var _nickname;  //ニックネームの文字列
     var key_nickname='nick_name%5'; //ニックネームのローカルストレージのキーコード
-    //ニックネームを非表示にする。
-      document.getElementById("nickname").style.display='none';
-      document.getElementById("table-disp").style.display='none';
-      document.getElementById("appendix").style.display='none';
+    var _count;  //獲得スタンプ数
       //localStorage.removeItem(key_nickname);    
       //ローカルストレージにニックネームのデータの有無を確認し、処理を分岐する。
       if(window.localStorage){
+          //エリア番号の読み取り
+          area_no=localStorage.getItem('area_no%');
+          //ニックネームのキーコードを作成
+          key_nickname="nick_name%" + area_no;
+          //ニックネームのローカルストレージを削除
+          //localStorage.removeItem(key_nickname);   
           // ローカルストレージにデータがあるか確認
           if (localStorage.getItem(key_nickname) === null) {
             //ニックネーム入力のプロンプトの関数を呼び出し
@@ -215,10 +230,8 @@
             id_nickname.style.display='block';
             id_nickname.textContent=_nickname + "　さん"; 
           }
-          //エリア番号の読み取り
-          area_no=localStorage.getItem('area_no%');
-          area_no=5;
           //alert('エリア番号' + area_no);
+
           //ローカルストレージからキー「selected-spot%地域番号」で基礎データを読み込み配列arrayに格納
           key_all="all_basic_data%" + area_no;
           //ローカルストレージの基礎データを取得→配列名arrayに格納、キーは「all_basic_data%地域番号」
@@ -286,6 +299,13 @@
         nickname.textContent=_nickname + ' さん' + 'スタンプの獲得数：' + _count + '個';
         //ニックネーム入力用のフォーム
         function prompt_nickname(){
+          //インプットボックスをクリアする
+          document.getElementById("name").value = "";
+          //ニックネーム、利用者番号、スタンプ一覧表、注釈を非表示にする
+          document.getElementById("nickname").style.display='none';
+          //document.getElementById("number").style.display='none';
+          document.getElementById("table_display").style.display='none';
+          document.getElementById("appendix").style.display='none';
           //実行ボタンがクリックされたときに発生するイベントを記述
             var button=document.getElementById("button");
             button.addEventListener("click",function(e){
@@ -296,8 +316,8 @@
                 document.getElementById("name").value="";
                 return; //処理を中断
               }
-              if(_nickname.length>12){
-                alert("ニックネームは文字数は12文字以下にしてください。");
+              if(_nickname.length>10){
+                alert("ニックネームは文字数は１０文字以下にしてください。");
                 document.getElementById("name").value="";
                 return; //処理を中断
               }
@@ -317,10 +337,12 @@
               }else{
                   //入力フォームを非表示にする。
                   document.getElementById("form_nickname").style.display='none';
-                  //ニックネームを表示する。
-                  var id_nickname=document.getElementById("nickname")
-                  id_nickname.style.display='block';
-                  id_nickname.textContent=_nickname + "　さん"; 
+                  //ニックネーム、利用者番号、スタンプ一覧表、注釈を表示にする
+                  document.getElementById("nickname").style.display='block';
+                  //document.getElementById("number").style.display='block';
+                  document.getElementById("table_display").style.display='block';
+                  document.getElementById("appendix").style.display='block';
+                  document.getElementById("nickname").textContent=_nickname + " さん >>> スタンプ：" + _count +' 個';
                   //ニックネームをキーを「nick_name%5」としてローカルストレージに保存する。
                   if(window.localStorage){
                       localStorage.setItem(key_nickname,_nickname);
@@ -356,5 +378,6 @@
   </script> 
 </body>
 </html>
+
 
 
