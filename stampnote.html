@@ -215,7 +215,7 @@
           //ニックネームのキーコードを作成
           key_nickname="nick_name%" + area_no;
           //ニックネームのローカルストレージを削除
-          //localStorage.removeItem(key_nickname);   
+          localStorage.removeItem(key_nickname);   
           // ローカルストレージにデータがあるか確認
           if (localStorage.getItem(key_nickname) === null) {
             //ニックネーム入力のプロンプトの関数を呼び出し
@@ -380,6 +380,7 @@
   </script> 
 </body>
 </html>
+
 
 
 
