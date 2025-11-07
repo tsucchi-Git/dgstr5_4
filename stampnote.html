@@ -216,7 +216,6 @@
           key_nickname="nick_name%" + area_no;
           //ニックネームのローカルストレージを削除
           localStorage.removeItem(key_nickname);
-          alert('111');
           // ローカルストレージにデータがあるか確認
           if (localStorage.getItem(key_nickname) === null) {
             //ニックネーム入力のプロンプトの関数を呼び出し
@@ -300,6 +299,7 @@
           }
         //ニックネーム入力用のフォーム
         function prompt_nickname(){
+          alert('222');
           //インプットボックスをクリアする
           document.getElementById("name").value = "";
           //ニックネーム、利用者番号、スタンプ一覧表、注釈を非表示にする
@@ -379,6 +379,7 @@
   </script> 
 </body>
 </html>
+
 
 
 
