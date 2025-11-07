@@ -14,16 +14,16 @@
   .table-img{
     width: 100%;
     text-align:c enter;
-    margin-top: 10px;
+    margin-top: 3px;
     vertical-align: middle; /* 縦方向の中央揃え */
     display: flex;          /* ブラウザSafari対策：画像の縦伸び防止 */
     align-items: flex-start;  /* ブラウザSafari対策：画像の縦伸び防止 */
-    cursol: pointer;        /*カーソルを近づけるとポインタ表示になる */
+    cursor: pointer;        /*カーソルを近づけるとポインタ表示になる */
   }
   .table-text{
     text-align: center; /* 横方向の中央揃え */
     vertical-align: middle; /* 縦方向の中央揃え */
-    font-size: 65%;
+    font-size: 50%;
     overflow-wrap: break-word;
     font-family: Arial;
   }
@@ -32,10 +32,6 @@
     text-align: center; /* 横方向の中央揃え */
     font-size: 120%;
     font-family: Arial;
-  }
-  .title-img{
-   text-align: center;  /*横方向の中央揃え */
-    /*vertical-align: middle;  縦方向の中央揃え */
   }
   .text-begin{
     text-align: left;
@@ -58,9 +54,6 @@
     </ul>
    </nav>
   <div id="title" class="page-title"></div>
-  <div class="title-img">
-    <img src="icon/stamp_rally.png" width="20%">
-  </div>
   <table border="1" >
     <p id="stamps" class="text-begin"></p>  
     <tbody>
@@ -289,5 +282,6 @@ document.body.oncopy = function(event) {
   </script> 
 </body>
 </html>
+
 
 
