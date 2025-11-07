@@ -60,7 +60,7 @@
    </nav>
   <div id="title" class="page-title"></div>
   <p id="nickname" class="text-begin"></p>
-  <form id="form_nickname" class="form">
+  <form id="form_nickname" class="form">  //ニックネーム入力のフォーム
     <lable>スタンプ帳にニックネームが表示されます。<br>好きな名前を入力してください。<br><br></lable>
     <lable for "textform">ニックネーム：</lable>
     <input type="text" id="name">
@@ -261,12 +261,12 @@
 
             }
                 //ローカルストレージにニックネームが保存されていない場合は、入力formを表示する。
-                //if (localStorage.getItem(key_nickname) === null) {
+                if (localStorage.getItem(key_nickname) === null) {
                     //ニックネーム入力のプロンプトの関数を呼び出し
-                    //prompt_nickname();
-                //} else {
+                    prompt_nickname();
+                } else {
                     //入力フォームを非表示にする。
-                    //document.getElementById("form_nickname").style.display='none';
+                    document.getElementById("form_nickname").style.display='none';
                     //ローカルストレージからニックネームの読み込み
                     _nickname=localStorage.getItem(key_nickname);
                     //関数get_date_timeを呼び出し、年月日時分秒を読み込む
@@ -278,7 +278,7 @@
                     document.getElementById("appendix").style.display='block';
                     document.getElementById("nickname").textContent=_nickname + " さん >>> スタンプ：" + _count +' 個';
                     // document.getElementById("number").textContent='No.:'+ year + month + day +hour + minute + second;
-        //}
+                }
 
               //ゲットしたスポット数
               //var e_stamps=document.getElementById("nickname");
@@ -371,6 +371,7 @@
   </script> 
 </body>
 </html>
+
 
 
 
