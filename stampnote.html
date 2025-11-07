@@ -43,6 +43,11 @@
     color:blue;
     font-family: Arial;
   }
+  .form{
+    padding: 10px;
+    border: 1px solid #333;
+    background: #c9f506;
+  }
 </style>
 <body>
   <nav>
@@ -54,7 +59,14 @@
     </ul>
    </nav>
   <div id="title" class="page-title"></div>
-  <p id="nickname" class="text-begin"></p>  
+  <p id="nickname" class="text-begin"></p>
+  <form id="form_nickname" class="form">
+    <lable>スタンプ帳にニックネームが表示されます。<br>好きな名前を入力してください。<br><br></lable>
+    <lable for "textform">ニックネーム：</lable>
+    <input type="text" id="name">
+    <button id="button">実行</button>
+    <lable for "textform"><br>※３～１０文字で入力してください。<br>※ニックネームは途中で変更できません。</lable>
+  </form>
   <table border="1" id="table-display">
     <tbody>
       <tr >
@@ -359,6 +371,7 @@
   </script> 
 </body>
 </html>
+
 
 
 
