@@ -364,18 +364,50 @@
                 }
           })
       }
-      // function get_date_time(year,month,day,hour,minute,second){
-      //   const today = new Date(); // 現在の日付を取得
-      //   const year = today.getFullYear(); // 年を取得
-      //   const month = today.getMonth() + 1; // 月を取得（0から始まるため+1）
-      //   const day = today.getDate(); // 日を取得
-      //   const hour=today.getHours();//時間を取得
-      //   const minute=today.getMinutes();//分を取得
-      //   const second=today.getSeconds();//秒を取得
-      // }  
+      function get_date_time(userid){
+        var array_alphabet=new Array(5);
+        const array_today= new Array(5);
+        const today = new Date(); // 現在の日付を取得
+        const year = today.getFullYear(); // 年を取得
+        array_today[0]=year.slice(-2);              //年の最後の2文字を取得
+        const month = today.getMonth() + 1; // 月を取得（0から始まるため+1）
+        if(month.length==1){month="0" + month};
+        array_today[1]=month;
+        const day = today.getDate(); // 日を取得
+        if(day.length==1){day="0" + day};
+        array_today[2]=day;
+        const hour=today.getHours();//時間を取得
+        if(hour.length==1){hour="0" + hour};
+        array_today[3]=hour;
+        const minute=today.getMinutes();//分を取得
+        if(minute.length==1){minute="0" + minute};
+        array_today[4]=minute;
+        const second=today.getSeconds();//秒を取得
+        if(second.length==1){second="0" + second};
+        array_today[5]=second;
+        get get_alphabet(array_alphabet);
+        userid=array_alphabet[0]+array_today[0];
+        userid=userid+array_alphabet[1]+array_today[1];
+        userid=userid+array_alphabet[2]+array_today[2];
+        userid=userid+array_alphabet[3]+array_today[3]+array_alphabet[4];
+      }
+      //ランダムなアルファベットを発生させ、それを配列に格納する
+      function get_alphabet(array_alphabet){
+        const min=5;
+        const max=26;
+        var _random;
+        var _alphabet;
+        for (let i = 0; i < 5; i++) {
+          //乱数の発生(1～26）
+          _random=Math.ranodom()*(max-min)+min;
+          //数字をふぁるふぁ別途に変換
+          _alphabet=String.fromCharCode(64 + _random); // ASCIIコードを使用
+          array_alphabet[i]=_alphabet
+        }
   </script> 
 </body>
 </html>
+
 
 
 
