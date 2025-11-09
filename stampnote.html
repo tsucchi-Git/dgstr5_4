@@ -48,6 +48,10 @@
     border: 1px solid #333;
     background: #c9f506;
   }
+  .user{
+    text-align:right;
+    font-size:40%;
+  }
 </style>
 <body>
   <nav>
@@ -60,6 +64,7 @@
    </nav>
   <div id="title" class="page-title"></div>
   <p id="nickname" class="text-begin"></p>
+  <p id="user_id" class="user"></p>
   <form id="form_nickname" class="form">
     <lable>スタンプ帳にニックネームが表示されます。<br>好きな名前を入力してください。<br><br></lable>
     <lable for "textform">ニックネーム：</lable>
@@ -189,15 +194,20 @@
       var area_no;
       var _nickname;  //ニックネームの文字列
       var key_nickname; //ニックネームのローカルストレージのキーコード
-      var _count; //獲得スタンプ数 
+      var _count; //獲得スタンプ数
+      var user;    
+      var _userid;  //ユーザーidの文字列
+      var key_userid; //ユーザーidのローカルストレージのキーコード
       if(window.localStorage){
           //エリア番号の読み取り
 　　      area_no=localStorage.getItem('area_no%');
-          //ニックネームのキーコードを作成
+          //ニックネームとユーザーidのローカルストレージのキーコードを作成
           key_nickname="nick_name%" + area_no;
+          key_useid="user_id%" + area_no;
     　    //ローカルストレージからキー「selected-spot%地域番号」で基礎データを読み込み配列arrayに格納
-          //※※ニックネームのローカルストレージを削除
-          //localStorage.removeItem(key_nickname);  
+          //※※ニックネームとユーザーidのローカルストレージを削除
+          localStorage.removeItem(key_nickname);localStorage.removeItem(key_userid);
+          //基礎データのローカルストレージのキー
       　  key_all="all_basic_data%" + area_no;
           //ローカルストレージの基礎データを取得→配列名arrayに格納、キーは「all_basic_data%地域番号」
           let json=localStorage.getItem(key_all);        　
@@ -264,20 +274,31 @@
             if (localStorage.getItem(key_nickname) === null) {
                 //ニックネーム入力のプロンプトの関数を呼び出し
                 prompt_nickname(_count);
+                //ユーザーidの作成と表示
+                get_userid(_userid);
+                user=document.getElementById("user_id");
+                user.textContent=_userid;
+                user.style.display='block';
+                //ユーザーidをキーを「user_id%5」としてローカルストレージに保存する。
+                if(window.localStorage){
+                    localStorage.setItem(key_userid,_userid);
+                }
+
             } else {
                 //入力フォームを非表示にする。
                 document.getElementById("form_nickname").style.display='none';
                 //ローカルストレージからニックネームの読み込み
                 _nickname=localStorage.getItem(key_nickname);
-                //関数get_date_timeを呼び出し、年月日時分秒を読み込む
-                //get_date_time(year,month,day,hour,minute,second);
+                //ユーザーidの読み込み
+                _userid=localStorage.getItem(key_nickname);
+                user=document.getElementById("user_id");
+                user.textContent=_userid;
                 //ニックネーム、利用者番号、スタンプ一覧表、注釈を表示にする
                 document.getElementById("nickname").style.display='block';
-                // document.getElementById("number").style.display='block';
                 document.getElementById("table_display").style.display='block';
                 document.getElementById("appendix").style.display='block';
+                document.getElementById("user_id").style.display='block';
                 document.getElementById("nickname").textContent=_nickname + " さん >>> スタンプ：" + _count +' 個';
-                // document.getElementById("number").textContent='No.:'+ year + month + day +hour + minute + second;
             }
 
           //画像がクリックされたときに発生するイベント
@@ -316,7 +337,7 @@
         document.getElementById("name").value = "";
         //ニックネーム、利用者番号、スタンプ一覧表、注釈を非表示にする
           document.getElementById("nickname").style.display='none';
-          //document.getElementById("number").style.display='none';
+          document.getElementById("user_id").style.display='none';
           document.getElementById("table_display").style.display='none';
           document.getElementById("appendix").style.display='none';
         //実行ボタンがクリックされたときに発生するイベントを記述
@@ -415,6 +436,7 @@
   </script> 
 </body>
 </html>
+
 
 
 
