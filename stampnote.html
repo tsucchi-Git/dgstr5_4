@@ -276,6 +276,7 @@
                 prompt_nickname(_count);
                 //ユーザーidの作成と表示
                 get_userid(_userid);
+                alert(_userid);
                 user=document.getElementById("user_id");
                 user.textContent=_userid;
                 user.style.display='block';
@@ -409,7 +410,7 @@
         userid=array_alphabet[0]+String(array_today[3])+String(array_today[4])+String(array_today[5]);
         userid=userid+array_alphabet[1]+String(array_today[0])+String(array_today[1])+String(array_today[2]);
         userid=userid+array_alphabet[2]
-        alert(userid);
+        //alert(userid);
         // userid=array_alphabet[0]+array_today[0];
         // userid=userid+array_alphabet[1]+array_today[1];
         // userid=userid+array_alphabet[2]+array_today[2];
@@ -436,6 +437,7 @@
   </script> 
 </body>
 </html>
+
 
 
 
