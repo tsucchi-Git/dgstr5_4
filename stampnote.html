@@ -195,6 +195,7 @@
       var _nickname;  //ニックネームの文字列
       var key_nickname; //ニックネームのローカルストレージのキーコード
       var _count; //獲得スタンプ数
+      var _userid;  //ユーザーidの文字列
       var user;    
       var key_userid; //ユーザーidのローカルストレージのキーコード
       if(window.localStorage){
@@ -281,7 +282,7 @@
                 //ローカルストレージからニックネームの読み込み
                 _nickname=localStorage.getItem(key_nickname);
                 //ユーザーidの読み込み
-                _userid=localStorage.getItem(key_nickname);
+                _userid=localStorage.getItem(key_userid);
                 user=document.getElementById("user_id");
                 user.textContent=_userid;
                 //ニックネーム、利用者番号、スタンプ一覧表、注釈を表示にする
@@ -437,6 +438,7 @@
   </script> 
 </body>
 </html>
+
 
 
 
