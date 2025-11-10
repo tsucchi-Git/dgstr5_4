@@ -276,17 +276,6 @@
                 prompt_nickname(_count);
                 //ユーザーidの作成の関数の呼び出しと表示
                 get_userid(_userid);
-                //alert(_userid);
-                //ユーザーidの表示
-                _userid="x2345A02568S"
-                user=document.getElementById("user_id");
-                user.textContent=_userid;
-                user.style.display='block';
-                //ユーザーidをキーを「user_id%5」としてローカルストレージに保存する。
-                if(window.localStorage){
-                    localStorage.setItem(key_userid,_userid);
-                }
-
             } else {
                 //入力フォームを非表示にする。
                 document.getElementById("form_nickname").style.display='none';
@@ -380,7 +369,6 @@
                     document.getElementById("table_display").style.display='block';
                     document.getElementById("appendix").style.display='block';
                     document.getElementById("nickname").textContent=_nickname + " さん >>> スタンプ：" + _count +' 個';
-
                     //ニックネームをキーを「nick_name%5」としてローカルストレージに保存する。
                     if(window.localStorage){
                         localStorage.setItem(key_nickname,_nickname);
@@ -389,8 +377,8 @@
           })
       }
       //ユーザーidを作成
-      function get_userid(userid){
-        var userid;
+      function get_userid(){
+        var _userid;
         var array_alphabet=new Array(5);
         var array_today= new Array(5);
         const today = new Date(); // 現在の日付を取得
@@ -410,15 +398,25 @@
         //アルファベットのランダム取得
         get_alphabet(array_alphabet);
         //idの作成
-        userid=array_alphabet[0]+String(array_today[3])+String(array_today[4])+String(array_today[5]);
-        userid=userid+array_alphabet[1]+String(array_today[0])+String(array_today[1])+String(array_today[2]);
-        userid=userid+array_alphabet[2]
-        alert(userid);
+        _userid=array_alphabet[0]+String(array_today[3])+String(array_today[4])+String(array_today[5]);
+        _userid=_userid+array_alphabet[1]+String(array_today[0])+String(array_today[1])+String(array_today[2]);
+        _userid=_userid+array_alphabet[2]
+        alert(_userid);
         // userid=array_alphabet[0]+array_today[0];
         // userid=userid+array_alphabet[1]+array_today[1];
         // userid=userid+array_alphabet[2]+array_today[2];
         // userid=userid+array_alphabet[3]+String(array_today[3])+String(array_today[4])+String(array_today[5])+array_alphabet[4];
         // alert(userid);
+        //ユーザーidの表示
+        //_userid="x2345A02568S"
+        user=document.getElementById("user_id");
+        user.textContent=_userid;
+        user.style.display='block';
+        //ユーザーidをキーを「user_id%5」としてローカルストレージに保存する。
+        if(window.localStorage){
+            localStorage.setItem(key_userid,_userid);
+        }
+
       }
       //ランダムなアルファベットを発生させ、それを配列に格納する
       function get_alphabet(array_alphabet1){
@@ -440,6 +438,7 @@
   </script> 
 </body>
 </html>
+
 
 
 
