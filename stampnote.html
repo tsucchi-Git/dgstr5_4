@@ -196,7 +196,6 @@
       var key_nickname; //ニックネームのローカルストレージのキーコード
       var _count; //獲得スタンプ数
       var user;    
-      var _userid;  //ユーザーidの文字列
       var key_userid; //ユーザーidのローカルストレージのキーコード
       if(window.localStorage){
           //エリア番号の読み取り
@@ -275,7 +274,7 @@
                 //ニックネーム入力のプロンプトの関数を呼び出し
                 prompt_nickname(_count);
                 //ユーザーidの作成の関数の呼び出しと表示
-                get_userid(_userid);
+                get_userid();
             } else {
                 //入力フォームを非表示にする。
                 document.getElementById("form_nickname").style.display='none';
@@ -438,6 +437,7 @@
   </script> 
 </body>
 </html>
+
 
 
 
