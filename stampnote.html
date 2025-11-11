@@ -282,7 +282,7 @@
           //document.getElementById("nickname").style.display='none';
           //document.getElementById("user_id").style.display='none';
             //ローカルストレージにニックネームが保存されていない場合は、入力formを表示する。
-            alert(localStorage.getItem(key_nickname) + ',' + localStorage.getItem(key_userid));
+            //alert(localStorage.getItem(key_nickname) + ',' + localStorage.getItem(key_userid));
             if (localStorage.getItem(key_nickname) === null || localStorage.getItem(key_userid) === null) {
                 if (localStorage.getItem(key_nickname) === null){
                 //     if(localStorage.getItem(key_userid) != null){
@@ -357,6 +357,7 @@
       function prompt_nickname(_count){
         //インプットボックスをクリアする
         document.getElementById("name").value = "";
+        document.getElementById("form_nickname").style.display='block';
         //ニックネーム、利用者番号、スタンプ一覧表、注釈を非表示にする
           document.getElementById("nickname").style.display='none';
           document.getElementById("user_id").style.display='none';
@@ -469,6 +470,7 @@
   </script> 
 </body>
 </html>
+
 
 
 
