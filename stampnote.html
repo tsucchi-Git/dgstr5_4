@@ -285,7 +285,7 @@
                 }
                 if (localStorage.getItem(key_userid) === null){
                   　//ユーザーidの作成の関数の呼び出しと表示
-                    get_userid();
+                    get_userid(_count);
                 }
             } else {
                 //入力フォームを非表示にする。
@@ -335,7 +335,6 @@
             alert('ローカルストレージは使えません');
       }
       //ニックネーム入力用のフォーム
-      //function prompt_nickname(_count,_userid){
       function prompt_nickname(_count){
         //ニックネーム、利用者番号、スタンプ一覧表、注釈を非表示にする
         document.getElementById("nickname").style.display='none';
@@ -402,7 +401,7 @@
           })
       }
       //ユーザーidを作成
-      function get_userid(){
+      function get_userid(_count){
         var _userid;
         var array_alphabet=new Array(5);
         var array_today= new Array(5);
@@ -475,6 +474,7 @@
   </script> 
 </body>
 </html>
+
 
 
 
