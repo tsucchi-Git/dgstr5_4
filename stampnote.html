@@ -438,7 +438,7 @@
         if(window.localStorage){
             localStorage.setItem(key_userid,_userid);
         }
-        if(_nickname === null){
+        if(_nickname === undefined){
         }else{
           alert('alphabet:' + _nickname);
           document.getElementById("nickname").textContent=_nickname + " さん >>> スタンプ：" + _count +' 個';
@@ -472,6 +472,7 @@
   </script> 
 </body>
 </html>
+
 
 
 
