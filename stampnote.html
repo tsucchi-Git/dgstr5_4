@@ -281,9 +281,8 @@ id<!DOCTYPE html>
           //document.getElementById("nickname").style.display='none';
           //document.getElementById("user_id").style.display='none';
             //ローカルストレージにニックネームが保存されていない場合は、入力formを表示する。
-            //if (localStorage.getItem(key_nickname) === null || localStorage.getItem(key_userid) === null) {
-            if (localStorage.getItem(key_nickname)) {
-                // if (localStorage.getItem(key_nickname) === null){
+            if (localStorage.getItem(key_nickname) === null || localStorage.getItem(key_userid) === null) {
+                if (localStorage.getItem(key_nickname) === null){
                 //     if(localStorage.getItem(key_userid) != null){
                 //       //ローカルストレージからユーザーidの読み込み
                 //       _userid=localStorage.getItem(key_useid);
@@ -468,6 +467,7 @@ id<!DOCTYPE html>
   </script> 
 </body>
 </html>
+
 
 
 
