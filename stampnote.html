@@ -381,7 +381,11 @@
                     document.getElementById("nickname").style.display='block';
                     document.getElementById("table_display").style.display='block';
                     document.getElementById("appendix").style.display='block';
-                    //document.getElementById("user_id").style.display='block';
+                    if(localStorage.getItem(key_userid) != null){
+                      _userid=localStorage.getItem(key_userid)
+                      document.getElementById("user_id").textContent=_userid
+                      document.getElementById("user_id").style.display='block';
+                    }
                     //   alert('nickname:'+ _nickname);
                     // if(_nickname === undifined){
                     //   alert('nickname:'+ _nickname);
@@ -466,4 +470,5 @@
   </script> 
 </body>
 </html>
+
 
