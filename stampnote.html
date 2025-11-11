@@ -276,13 +276,12 @@
 　                   });
 
             }
+          //ニックネーム、利用者番号、スタンプ一覧表、注釈を非表示にする
+          document.getElementById("nickname").style.display='none';
+          document.getElementById("user_id").style.display='none';
             //ローカルストレージにニックネームが保存されていない場合は、入力formを表示する。
             if (localStorage.getItem(key_nickname) === null || localStorage.getItem(key_userid) === null) {
                 if (localStorage.getItem(key_nickname) === null){
-                          //ニックネーム、利用者番号、スタンプ一覧表、注釈を非表示にする
-          document.getElementById("nickname").style.display='none';
-          document.getElementById("user_id").style.display='none';
-
                     //ニックネーム入力のプロンプトの関数を呼び出し
                     prompt_nickname(_count);
                 }
@@ -458,6 +457,7 @@
   </script> 
 </body>
 </html>
+
 
 
 
