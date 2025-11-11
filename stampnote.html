@@ -297,10 +297,10 @@
                   　//ユーザーidの作成の関数の呼び出しと表示
                     get_userid();
                     //ローカルストレージからニックネームの読み込み
-                    //_nickname=localStorage.getItem(key_nickname);
+                    _nickname=localStorage.getItem(key_nickname);
                     //ニックネームを表示にする
-                    //document.getElementById("nickname").textContent=_nickname + " さん >>> スタンプ：" + _count +' 個';
-                    //document.getElementById("nickname").style.display='block';
+                    document.getElementById("nickname").textContent=_nickname + " さん >>> スタンプ：" + _count +' 個';
+                    document.getElementById("nickname").style.display='block';
                 }
             } else {
                 //alert('xxx');
@@ -467,6 +467,7 @@
   </script> 
 </body>
 </html>
+
 
 
 
