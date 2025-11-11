@@ -437,13 +437,18 @@
         if(window.localStorage){
             localStorage.setItem(key_userid,_userid);
         }
-        if(document.getElementById("nickname").style.display='none'){
-            //ローカルストレージからニックネームの読み込み
-            _nickname=localStorage.getItem(key_nickname);
-            //ニックネームを表示にする
-            document.getElementById("nickname").textContent=_nickname + " さん >>> スタンプ：" + _count +' 個';
-            document.getElementById("nickname").style.display='block';
+        if(_nickname === null){
+        }else{
+          document.getElementById("nickname").textContent=_nickname + " さん >>> スタンプ：" + _count +' 個';
+          document.getElementById("nickname").style.display='block';
         }
+        // if(document.getElementById("nickname").style.display='none'){
+        //     //ローカルストレージからニックネームの読み込み
+        //     _nickname=localStorage.getItem(key_nickname);
+        //     //ニックネームを表示にする
+        //     document.getElementById("nickname").textContent=_nickname + " さん >>> スタンプ：" + _count +' 個';
+        //     document.getElementById("nickname").style.display='block';
+        // }
       }
       //ランダムなアルファベットを発生させ、それを配列に格納する
       function get_alphabet(array_alphabet1){
@@ -465,6 +470,7 @@
   </script> 
 </body>
 </html>
+
 
 
 
