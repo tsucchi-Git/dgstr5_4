@@ -432,9 +432,9 @@
         //ユーザーidの表示
         user=document.getElementById("user_id");
         user.textContent=_userid;
-        if(document.getElementById("form_nickname").style.display='none'){
-            user.style.display='block';
-        }
+        // if(document.getElementById("form_nickname").style.display='none'){
+        //     user.style.display='block';
+        // }
         //ユーザーidをキーを「user_id%5」としてローカルストレージに保存する。
         if(window.localStorage){
             localStorage.setItem(key_userid,_userid);
@@ -473,6 +473,7 @@
   </script> 
 </body>
 </html>
+
 
 
 
