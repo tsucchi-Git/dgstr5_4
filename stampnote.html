@@ -374,25 +374,20 @@
                   document.getElementById("name").value="";
                   return; //処理を中断
                 }else{
+                  //ニックネームが規定通りに設定された場合の処理
                     //入力フォームを非表示にする。
                     document.getElementById("form_nickname").style.display='none';
                     //ニックネーム、スタンプ一覧表、ユーザーid、注釈を表示にする
                     document.getElementById("nickname").style.display='block';
                     document.getElementById("table_display").style.display='block';
                     document.getElementById("appendix").style.display='block';
+                    //ユーザーidが設定されている場合は、これを表示する。
                     if(localStorage.getItem(key_userid) != null){
                       _userid=localStorage.getItem(key_userid)
                       document.getElementById("user_id").textContent=_userid
                       document.getElementById("user_id").style.display='block';
                     }
-                    //   alert('nickname:'+ _nickname);
-                    // if(_nickname === undifined){
-                    //   alert('nickname:'+ _nickname);
-                    // }else{
-                    //   alert('form');
-                      document.getElementById("nickname").textContent=_nickname + " さん >>> スタンプ：" + _count +' 個';
-                    //}
-                    //document.getElementById("user_id").textContent=_useid;
+                    document.getElementById("nickname").textContent=_nickname + " さん >>> スタンプ：" + _count +' 個';
                     //ニックネームをキーを「nick_name%5」としてローカルストレージに保存する。
                     if(window.localStorage){
                         localStorage.setItem(key_nickname,_nickname);
@@ -474,6 +469,7 @@
   </script> 
 </body>
 </html>
+
 
 
 
