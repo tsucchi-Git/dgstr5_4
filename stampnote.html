@@ -287,6 +287,9 @@
                     document.getElementById("form_nickname").style.display='none';
                   　//ユーザーidの作成の関数の呼び出しと表示
                     get_userid();
+                    //ニックネームを表示にする
+                    document.getElementById("nickname").textContent=_nickname + " さん >>> スタンプ：" + _count +' 個';
+                    document.getElementById("nickname").style.display='block';
                 }
             } else {
                 //入力フォームを非表示にする。
@@ -375,9 +378,8 @@
                 }else{
                     //入力フォームを非表示にする。
                     document.getElementById("form_nickname").style.display='none';
-                    //ニックネーム、利用者番号、スタンプ一覧表、注釈を表示にする
+                    //ニックネーム、スタンプ一覧表、注釈を表示にする
                     document.getElementById("nickname").style.display='block';
-                    //document.getElementById("number").style.display='block';
                     document.getElementById("table_display").style.display='block';
                     document.getElementById("appendix").style.display='block';
                     document.getElementById("nickname").textContent=_nickname + " さん >>> スタンプ：" + _count +' 個';
@@ -450,6 +452,7 @@
   </script> 
 </body>
 </html>
+
 
 
 
