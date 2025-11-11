@@ -283,7 +283,7 @@
             //ローカルストレージにニックネームが保存されていない場合は、入力formを表示する。
             if (localStorage.getItem(key_nickname) === null || localStorage.getItem(key_userid) === null) {
                 if (localStorage.getItem(key_nickname) === null){
-                    if(localStorage.getItem(key_userid) != null}{
+                    if(localStorage.getItem(key_userid) != null){
                       //ローカルストレージからユーザーidの読み込み
                       _userid=localStorage.getItem(key_useid);
                     }
@@ -392,7 +392,7 @@
                     document.getElementById("nickname").style.display='block';
                     document.getElementById("table_display").style.display='block';
                     document.getElementById("appendix").style.display='block';
-                    //document.getElementById("user_id").style.display='block';
+                    document.getElementById("user_id").style.display='block';
                     document.getElementById("nickname").textContent=_nickname + " さん >>> スタンプ：" + _count +' 個';
                     //ニックネームをキーを「nick_name%5」としてローカルストレージに保存する。
                     if(window.localStorage){
@@ -463,4 +463,5 @@
   </script> 
 </body>
 </html>
+
 
