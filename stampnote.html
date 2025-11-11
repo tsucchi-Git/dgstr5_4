@@ -379,11 +379,13 @@
                     //入力フォームを非表示にする。
                     document.getElementById("form_nickname").style.display='none';
                     //ニックネーム、スタンプ一覧表、ユーザーid、注釈を表示にする
+                    if(_nickname != null){
                     document.getElementById("nickname").style.display='block';
                     document.getElementById("table_display").style.display='block';
                     document.getElementById("appendix").style.display='block';
                     //document.getElementById("user_id").style.display='block';
                     document.getElementById("nickname").textContent=_nickname + " さん >>> スタンプ：" + _count +' 個';
+                    }
                     //document.getElementById("user_id").textContent=_useid;
                     //ニックネームをキーを「nick_name%5」としてローカルストレージに保存する。
                     if(window.localStorage){
@@ -462,6 +464,7 @@
   </script> 
 </body>
 </html>
+
 
 
 
