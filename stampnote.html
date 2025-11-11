@@ -295,7 +295,7 @@
                 }
                 if (localStorage.getItem(key_userid) === null){
                   　//ユーザーidの作成の関数の呼び出しと表示
-                    //get_userid();
+                    get_userid();
                 }
             } else {
                 alert('xxx');
@@ -349,7 +349,6 @@
       //function prompt_nickname(_count,_userid){
       function prompt_nickname(_count){
         //インプットボックスをクリアする
-        alert('prompt2' +',' + _count);
         document.getElementById("name").value = "";
         document.getElementById("form_nickname").style.display='block';
         //ニックネーム、利用者番号、スタンプ一覧表、注釈を非表示にする
@@ -472,6 +471,7 @@
   </script> 
 </body>
 </html>
+
 
 
 
