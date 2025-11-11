@@ -423,6 +423,8 @@
         //ニックネームが設定されている場合は、入力フォームを非表示にし、ニックネームを表示する。
         if (localStorage.getItem(key_nickname) != null){
           document.getElementById("form_nickname").style.display='none';
+          _nickname=localStorage.getItem(key_nickname);
+          document.getElementById("nickname").textContent=_nickname + " さん >>> スタンプ：" + _count +' 個';
           document.getElementById("nickname").style.display='block';
         }
         //アルファベットのランダム取得
@@ -439,12 +441,12 @@
         if(window.localStorage){
             localStorage.setItem(key_userid,_userid);
         }
-        //ニックネームが設定されていない場合はニックネームととスタンプ獲得数を表示しない
-        if(_nickname === undefined){
-        }else{
-          document.getElementById("nickname").textContent=_nickname + " さん >>> スタンプ：" + _count +' 個';
-          document.getElementById("nickname").style.display='block';
-        }
+        //ニックネームが設定されていない場合はニックネームとスタンプ獲得数を表示しない
+        // if(_nickname === undefined){
+        // }else{
+        //   document.getElementById("nickname").textContent=_nickname + " さん >>> スタンプ：" + _count +' 個';
+        //   document.getElementById("nickname").style.display='block';
+        // }
         // if(document.getElementById("nickname").style.display='none'){
         //     //ローカルストレージからニックネームの読み込み
         //     _nickname=localStorage.getItem(key_nickname);
@@ -473,6 +475,7 @@
   </script> 
 </body>
 </html>
+
 
 
 
