@@ -425,14 +425,7 @@
         _userid=array_alphabet[0]+String(array_today[3])+String(array_today[4])+String(array_today[5]);
         _userid=_userid+array_alphabet[1]+String(array_today[0])+String(array_today[1])+String(array_today[2]);
         _userid=_userid+array_alphabet[2]
-        //alert(_userid);
-        // userid=array_alphabet[0]+array_today[0];
-        // userid=userid+array_alphabet[1]+array_today[1];
-        // userid=userid+array_alphabet[2]+array_today[2];
-        // userid=userid+array_alphabet[3]+String(array_today[3])+String(array_today[4])+String(array_today[5])+array_alphabet[4];
-        // alert(userid);
         //ユーザーidの表示
-        //_userid="x2345A02568S"
         user=document.getElementById("user_id");
         user.textContent=_userid;
         user.style.display='block';
@@ -440,9 +433,9 @@
         if(window.localStorage){
             localStorage.setItem(key_userid,_userid);
         }
+        //ニックネームが設定されていない場合はニックネームととスタンプ獲得数を表示しない
         if(_nickname === undefined){
         }else{
-          alert('alphabet:' + _nickname);
           document.getElementById("nickname").textContent=_nickname + " さん >>> スタンプ：" + _count +' 個';
           document.getElementById("nickname").style.display='block';
         }
@@ -474,6 +467,7 @@
   </script> 
 </body>
 </html>
+
 
 
 
