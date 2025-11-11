@@ -338,14 +338,15 @@
       //ニックネーム入力用のフォーム
       //function prompt_nickname(_count,_userid){
       function prompt_nickname(_count){
+        //ニックネーム、利用者番号、スタンプ一覧表、注釈を非表示にする
+        document.getElementById("nickname").style.display='none';
+        document.getElementById("user_id").style.display='none';
+        document.getElementById("table_display").style.display='none';
+        document.getElementById("appendix").style.display='none';
         //インプットボックスをクリアする
         document.getElementById("name").value = "";
+        //ニックネームの入力フォームを表示する
         document.getElementById("form_nickname").style.display='block';
-        //ニックネーム、利用者番号、スタンプ一覧表、注釈を非表示にする
-          document.getElementById("nickname").style.display='none';
-          document.getElementById("user_id").style.display='none';
-          document.getElementById("table_display").style.display='none';
-          document.getElementById("appendix").style.display='none';
         //実行ボタンがクリックされたときに発生するイベントを記述
           var button=document.getElementById("button");
           button.addEventListener("click",function(e){
@@ -461,6 +462,7 @@
   </script> 
 </body>
 </html>
+
 
 
 
