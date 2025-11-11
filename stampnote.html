@@ -420,9 +420,10 @@
         array_today[4]=minute;
         const second=String(today.getSeconds()).padStart(2, '0');//秒を2桁で取得
         array_today[5]=second;
-        //ニックネームが設定されている場合は、入力フォームを非表示にする。
+        //ニックネームが設定されている場合は、入力フォームを非表示にし、ニックネームを表示する。
         if (localStorage.getItem(key_nickname) != null){
           document.getElementById("form_nickname").style.display='none';
+          document.getElementById("nickname").style.display='block';
         }
         //アルファベットのランダム取得
         get_alphabet(array_alphabet);
@@ -472,6 +473,7 @@
   </script> 
 </body>
 </html>
+
 
 
 
