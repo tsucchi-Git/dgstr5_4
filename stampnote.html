@@ -358,49 +358,49 @@
           document.getElementById("table_display").style.display='none';
           document.getElementById("appendix").style.display='none';
         //実行ボタンがクリックされたときに発生するイベントを記述
-          // var button=document.getElementById("button");
-          // button.addEventListener("click",function(e){
-          //       e.preventDefault();
-          //       _nickname=document.getElementById("name").value;
-          //       if(_nickname.length<3){
-          //         alert("ニックネームは文字数は３文字以上にしてください。");
-          //         document.getElementById("name").value="";
-          //         return; //処理を中断
-          //       }
-          //       if(_nickname.length>10){
-          //         alert("ニックネームは文字数は１０文字以下にしてください。");
-          //         document.getElementById("name").value="";
-          //         return; //処理を中断
-          //       }
-          //       //入力した文字列の先頭が半角または全角のスペースになっていなことをチェックする
-          //       let strSearch1 = ' ';  // 探す文字（半角のスペース）
-          //       let strSearch2 = '　';  // 探す文字（全角のスペース）
-          //       if(_nickname[0] == strSearch1 || _nickname[0] == strSearch2){
-          //         alert("先頭の文字が半角スペースまたは全角スペースになっています。再入力してください。");
-          //         document.getElementById("name").value="";
-          //         return; //処理を中断
-          //       }
-          //       //入力した文字列の最後が半角または全角のスペースになっていなことをチェックする
-          //       if(_nickname[_nickname.length-1] == strSearch1 || _nickname[_nickname.length-1] == strSearch2){
-          //         alert("最後の文字が半角スペースまたは全角スペースになっています。再入力してください。");
-          //         document.getElementById("name").value="";
-          //         return; //処理を中断
-          //       }else{
-          //           //入力フォームを非表示にする。
-          //           document.getElementById("form_nickname").style.display='none';
-          //           //ニックネーム、スタンプ一覧表、ユーザーid、注釈を表示にする
-          //           document.getElementById("nickname").style.display='block';
-          //           document.getElementById("table_display").style.display='block';
-          //           document.getElementById("appendix").style.display='block';
-          //           //document.getElementById("user_id").style.display='block';
-          //           document.getElementById("nickname").textContent=_nickname + " さん >>> スタンプ：" + _count +' 個';
-          //           //document.getElementById("user_id").textContent=_useid;
-          //           //ニックネームをキーを「nick_name%5」としてローカルストレージに保存する。
-          //           if(window.localStorage){
-          //               localStorage.setItem(key_nickname,_nickname);
-          //           }
-          //       }
-          // })
+          var button=document.getElementById("button");
+          button.addEventListener("click",function(e){
+                e.preventDefault();
+                _nickname=document.getElementById("name").value;
+                if(_nickname.length<3){
+                  alert("ニックネームは文字数は３文字以上にしてください。");
+                  document.getElementById("name").value="";
+                  return; //処理を中断
+                }
+                if(_nickname.length>10){
+                  alert("ニックネームは文字数は１０文字以下にしてください。");
+                  document.getElementById("name").value="";
+                  return; //処理を中断
+                }
+                //入力した文字列の先頭が半角または全角のスペースになっていなことをチェックする
+                let strSearch1 = ' ';  // 探す文字（半角のスペース）
+                let strSearch2 = '　';  // 探す文字（全角のスペース）
+                if(_nickname[0] == strSearch1 || _nickname[0] == strSearch2){
+                  alert("先頭の文字が半角スペースまたは全角スペースになっています。再入力してください。");
+                  document.getElementById("name").value="";
+                  return; //処理を中断
+                }
+                //入力した文字列の最後が半角または全角のスペースになっていなことをチェックする
+                if(_nickname[_nickname.length-1] == strSearch1 || _nickname[_nickname.length-1] == strSearch2){
+                  alert("最後の文字が半角スペースまたは全角スペースになっています。再入力してください。");
+                  document.getElementById("name").value="";
+                  return; //処理を中断
+                }else{
+                    //入力フォームを非表示にする。
+                    document.getElementById("form_nickname").style.display='none';
+                    //ニックネーム、スタンプ一覧表、ユーザーid、注釈を表示にする
+                    document.getElementById("nickname").style.display='block';
+                    document.getElementById("table_display").style.display='block';
+                    document.getElementById("appendix").style.display='block';
+                    //document.getElementById("user_id").style.display='block';
+                    document.getElementById("nickname").textContent=_nickname + " さん >>> スタンプ：" + _count +' 個';
+                    //document.getElementById("user_id").textContent=_useid;
+                    //ニックネームをキーを「nick_name%5」としてローカルストレージに保存する。
+                    if(window.localStorage){
+                        localStorage.setItem(key_nickname,_nickname);
+                    }
+                }
+          })
       }
       //ユーザーidを作成
       function get_userid(){
@@ -472,6 +472,7 @@
   </script> 
 </body>
 </html>
+
 
 
 
