@@ -283,7 +283,9 @@
                     prompt_nickname(_count);
                 }
                 if (localStorage.getItem(key_userid) === null){
-                    //ユーザーidの作成の関数の呼び出しと表示
+                    //入力フォームを非表示にする。
+                    document.getElementById("form_nickname").style.display='none';
+                  　//ユーザーidの作成の関数の呼び出しと表示
                     get_userid();
                 }
             } else {
@@ -448,6 +450,7 @@
   </script> 
 </body>
 </html>
+
 
 
 
