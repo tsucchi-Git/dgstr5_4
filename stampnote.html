@@ -294,15 +294,8 @@
                     prompt_nickname(_count);
                 }
                 if (localStorage.getItem(key_userid) === null){
-                    //入力フォームを非表示にする。
-                    //document.getElementById("form_nickname").style.display='none';
                   　//ユーザーidの作成の関数の呼び出しと表示
                     get_userid();
-                    //ローカルストレージからニックネームの読み込み
-                    _nickname=localStorage.getItem(key_nickname);
-                    //ニックネームを表示にする
-                    document.getElementById("nickname").textContent=_nickname + " さん >>> スタンプ：" + _count +' 個';
-                    document.getElementById("nickname").style.display='block';
                 }
             } else {
                 alert('xxx');
@@ -356,7 +349,7 @@
       //function prompt_nickname(_count,_userid){
       function prompt_nickname(_count){
         //インプットボックスをクリアする
-        alert('prompt');
+        //alert('prompt');
         document.getElementById("name").value = "";
         document.getElementById("form_nickname").style.display='block';
         //ニックネーム、利用者番号、スタンプ一覧表、注釈を非表示にする
@@ -428,6 +421,8 @@
         array_today[4]=minute;
         const second=String(today.getSeconds()).padStart(2, '0');//秒を2桁で取得
         array_today[5]=second;
+        //入力フォームを非表示にする。
+        document.getElementById("form_nickname").style.display='none';
         //アルファベットのランダム取得
         get_alphabet(array_alphabet);
         //idの作成
@@ -449,7 +444,13 @@
         if(window.localStorage){
             localStorage.setItem(key_userid,_userid);
         }
-
+        if(document.getElementById("nickname").style.display='none'){
+            //ローカルストレージからニックネームの読み込み
+            _nickname=localStorage.getItem(key_nickname);
+            //ニックネームを表示にする
+            document.getElementById("nickname").textContent=_nickname + " さん >>> スタンプ：" + _count +' 個';
+            document.getElementById("nickname").style.display='block';
+        }
       }
       //ランダムなアルファベットを発生させ、それを配列に格納する
       function get_alphabet(array_alphabet1){
@@ -471,6 +472,7 @@
   </script> 
 </body>
 </html>
+
 
 
 
